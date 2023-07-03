@@ -4,12 +4,15 @@
   "type": "module",
   "description": "[![Actions Status](https://github.com/SplitCode/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/SplitCode/frontend-project-44/actions)",
   "bin": {
-  "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js"
   },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Natalia Bandurova",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
