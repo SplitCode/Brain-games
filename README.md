@@ -1,5 +1,14 @@
-Демонстрация игры:
-https://asciinema.org/a/XfiBEm3Lk385cbppdQhlD6PYZ
+**Демонстрация игр:**
+
+[![Игра: "Проверка на чётность"](https://asciinema.org/a/596266.svg)](https://asciinema.org/a/596266)
+
+[![Игра: "Калькулятор"](https://asciinema.org/a/596269.svg)](https://asciinema.org/a/596269)
+
+<a href="" target="_blank">Игра: "Прогрессия"</a>
+
+<a href="" target="_blank">Игра: "Определение наибольшего общего делителя"</a>
+
+<a href="" target="_blank">Игра: "Определение простого числа"</a>
 
 
 ### Hexlet tests and linter status:
