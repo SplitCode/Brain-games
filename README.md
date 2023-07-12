@@ -1,4 +1,4 @@
-# Brain Games
+## Brain Games
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/SplitCode/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/SplitCode/frontend-project-44/actions)
