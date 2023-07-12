@@ -17,5 +17,6 @@ ___
 
 [![asciicast](https://asciinema.org/a/596269.svg)](https://asciinema.org/a/596269)
 ___
-**The greatest common divisor**
+**The Greatest Common Divisor**
+
 [![asciicast](https://asciinema.org/a/596309.svg)](https://asciinema.org/a/596309)
