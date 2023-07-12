@@ -1,9 +1,11 @@
-**Демонстрация игр:**
+### Демонстрация игр:
 
-Игра: "Проверка на чётность"
+**Игра: "Проверка на чётность"**
+
 [![asciicast](https://asciinema.org/a/596266.svg)](https://asciinema.org/a/596266)
 
-Игра: "Калькулятор"
+**Игра: "Калькулятор"**
+
 [![asciicast](https://asciinema.org/a/596269.svg)](https://asciinema.org/a/596269)
 
 ### Hexlet tests and linter status:
