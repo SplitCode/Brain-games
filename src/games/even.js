@@ -6,11 +6,11 @@ const evenGame = () => {
   console.log(`Hello, ${userName}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-  const countRound = 3;
+  const roundsCount = 3;
 
   const getRandomNumber = () => Math.floor(Math.random() * 100);
 
-  for (let i = 0; i < countRound; i += 1) {
+  for (let i = 0; i < roundsCount; i += 1) {
     const number = getRandomNumber();
     const isEvenNumber = (num) => (num % 2 === 0 ? 'yes' : 'no');
     const expectedAnswer = isEvenNumber(number);

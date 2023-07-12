@@ -6,7 +6,7 @@ const calcGame = () => {
   console.log(`Hello, ${userName}!`);
   console.log('What is the result of the expression?');
 
-  const countRound = 3;
+  const roundsCount = 3;
 
   const getRandomNumber = () => Math.floor(Math.random() * 100);
 
@@ -17,8 +17,8 @@ const calcGame = () => {
   const diff = (num1, num2) => num1 - num2;
   const mult = (num1, num2) => num1 * num2;
 
-  for (let i = 0; i < countRound; i += 1) {
-    const [num2, num1] = [getRandomNumber(), getRandomNumber()];
+  for (let i = 0; i < roundsCount; i += 1) {
+    const [num1, num2] = [getRandomNumber(), getRandomNumber()];
     const operator = operators[getRandomIndex()];
 
     const userAnswer = readlineSync.question(`Question: ${num1} ${operator} ${num2}\nYour answer: `);
@@ -36,7 +36,7 @@ const calcGame = () => {
         break;
 
       default:
-        console.log('oh');
+        throw new Error('Unknown operator');
     }
 
     if (userAnswer === expectedAnswer) {
