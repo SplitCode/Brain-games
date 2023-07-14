@@ -24,3 +24,8 @@ ___
 **Progression**
 
 [![asciicast](https://asciinema.org/a/596734.svg)](https://asciinema.org/a/596734)
+___
+**Prime Numbers**
+
+[![asciicast](https://asciinema.org/a/596760.svg)](https://asciinema.org/a/596760)
+
