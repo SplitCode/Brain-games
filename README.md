@@ -20,3 +20,7 @@ ___
 **The Greatest Common Divisor**
 
 [![asciicast](https://asciinema.org/a/596309.svg)](https://asciinema.org/a/596309)
+___
+**Progression**
+
+[![asciicast](https://asciinema.org/a/596734.svg)](https://asciinema.org/a/596734)

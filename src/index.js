@@ -14,10 +14,10 @@ const greeting = () => {
 };
 
 // функция получения рандомного числа
-const getRandomNumber = () => Math.floor(Math.random() * 100);
+const getRandomNumber = (max, min) => Math.floor(Math.random() * (max - min + 1) + min);
 
 // функция получения имени пользователя
-// const getUserName = readlineSync.question('May I have your name? ');
+const getUserName = readlineSync.question('May I have your name? ');
 
 // формирование ответа
 const answer = () => {
@@ -30,4 +30,4 @@ const answer = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export { getRandomNumber, roundsCount, greeting, answer };
+export { getRandomNumber };
