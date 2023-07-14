@@ -28,10 +28,11 @@ const progressionGame = () => {
     const getRandomIndex = getRandomNumber(0, progressionLength);
     const hiddenNumber = progression[getRandomIndex];
     progression[getRandomIndex] = '..';
+    const questionProgression = progression.join(' ');
 
     const expectedAnswer = hiddenNumber.toString();
 
-    const userAnswer = readlineSync.question(`Question: ${progression}\nYour answer: `);
+    const userAnswer = readlineSync.question(`Question: ${questionProgression}\nYour answer: `);
 
     if (userAnswer === expectedAnswer) {
       console.log('Correct!');
