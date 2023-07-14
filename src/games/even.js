@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import getRandomNumber from '../utilities.js';
 
 const evenGame = () => {
   console.log('Welcome to the Brain Games!');
@@ -7,8 +8,6 @@ const evenGame = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   const roundsCount = 3;
-
-  const getRandomNumber = () => Math.floor(Math.random() * 100);
 
   for (let i = 0; i < roundsCount; i += 1) {
     const number = getRandomNumber();

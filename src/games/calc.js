@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import getRandomNumber from '../utilities.js';
 
 const calcGame = () => {
   console.log('Welcome to the Brain Games!');
@@ -8,18 +9,15 @@ const calcGame = () => {
 
   const roundsCount = 3;
 
-  const getRandomNumber = () => Math.floor(Math.random() * 100);
-
-  const operators = ['+', '-', '*'];
-  const getRandomIndex = () => Math.floor(Math.random() * operators.length);
-
   const sum = (num1, num2) => num1 + num2;
   const diff = (num1, num2) => num1 - num2;
   const mult = (num1, num2) => num1 * num2;
 
   for (let i = 0; i < roundsCount; i += 1) {
     const [num1, num2] = [getRandomNumber(), getRandomNumber()];
-    const operator = operators[getRandomIndex()];
+    const operators = ['+', '-', '*'];
+    const getRandomIndex = getRandomNumber(0, 2);
+    const operator = operators[getRandomIndex];
 
     const userAnswer = readlineSync.question(`Question: ${num1} ${operator} ${num2}\nYour answer: `);
     let expectedAnswer;
