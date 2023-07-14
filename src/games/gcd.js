@@ -10,7 +10,7 @@ const gcdGame = () => {
   const roundsCount = 3;
 
   for (let i = 0; i < roundsCount; i += 1) {
-    const [number1, number2] = [getRandomNumber(), getRandomNumber()];
+    const [number1, number2] = [getRandomNumber(0, 100), getRandomNumber(0, 100)];
     const getGcd = (num1, num2) => {
       let temp;
       if (num1 === num2) {
