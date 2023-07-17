@@ -1,50 +1,38 @@
-import readlineSync from 'readline-sync';
 import getRandomNumber from '../utilities.js';
+import logic from '../index.js';
 
-const calcGame = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log('What is the result of the expression?');
+const question = 'What is the result of the expression?';
 
-  const roundsCount = 3;
+const gamesRule = () => {
+  const [number1, number2] = [getRandomNumber(), getRandomNumber()];
+  const operators = ['+', '-', '*'];
+  const getRandomIndex = getRandomNumber(0, 2);
+  const randomOperator = operators[getRandomIndex];
 
   const sum = (num1, num2) => num1 + num2;
   const diff = (num1, num2) => num1 - num2;
   const mult = (num1, num2) => num1 * num2;
 
-  for (let i = 0; i < roundsCount; i += 1) {
-    const [num1, num2] = [getRandomNumber(), getRandomNumber()];
-    const operators = ['+', '-', '*'];
-    const getRandomIndex = getRandomNumber(0, 2);
-    const operator = operators[getRandomIndex];
-
-    const userAnswer = readlineSync.question(`Question: ${num1} ${operator} ${num2}\nYour answer: `);
-    let expectedAnswer;
-
+  const expressione = (num1, num2, operator) => {
     switch (operator) {
       case '+':
-        expectedAnswer = sum(num1, num2).toString();
-        break;
+        return sum(num1, num2);
       case '-':
-        expectedAnswer = diff(num1, num2).toString();
-        break;
+        return diff(num1, num2);
       case '*':
-        expectedAnswer = mult(num1, num2).toString();
-        break;
-
+        return mult(num1, num2);
       default:
         throw new Error('Unknown operator');
     }
+  };
 
-    if (userAnswer === expectedAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.\nLet's try again, ${userName}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
+  const expectedAnswer = expressione(number1, number2, randomOperator).toString();
+  const questionExpression = `${number1} ${randomOperator} ${number2}`;
+  return [questionExpression, expectedAnswer];
+};
+
+const calcGame = () => {
+  logic(question, gamesRule);
 };
 
 export default calcGame;
