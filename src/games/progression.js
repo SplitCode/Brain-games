@@ -19,9 +19,9 @@ const gamesRule = () => {
   };
 
   const progression = getRandomProgression(firstProgrNumber, progressionStep, progressionLength);
-  const hiddenNumber = progression[getRandomIndex].toString();
+  const hiddenNumber = progression[getRandomIndex];
   progression[getRandomIndex] = '..';
-  const expectedAnswer = hiddenNumber;
+  const expectedAnswer = String(hiddenNumber);
   const questionProgression = progression.join(' ');
 
   return [questionProgression, expectedAnswer];
