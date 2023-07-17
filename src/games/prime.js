@@ -8,14 +8,14 @@ const gamesRule = () => {
 
   const isPrime = (num) => {
     if (num < 2) {
-      return 'no';
+      return false;
     }
     for (let j = 2; j <= num / 2; j += 1) {
       if (num % j === 0) {
-        return 'no';
+        return false;
       }
     }
-    return 'yes';
+    return true;
   };
 
   const expectedAnswer = isPrime(number) ? 'yes' : 'no';
