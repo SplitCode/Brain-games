@@ -7,7 +7,7 @@ const gamesRule = () => {
   const firstProgrNumber = getRandomNumber();
   const progressionLength = getRandomNumber(5, 10);
   const progressionStep = getRandomNumber(1, 100);
-  const getRandomIndex = getRandomNumber(0, progressionLength);
+  const getRandomIndex = getRandomNumber(0, progressionLength - 1);
 
   const getRandomProgression = (firstNumber, step, length) => {
     const randomProgression = [];
