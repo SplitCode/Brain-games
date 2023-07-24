@@ -1,9 +1,9 @@
 import getRandomNumber from '../utilities.js';
-import logic from '../index.js';
+import run from '../index.js';
 
-const question = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
-const gamesRule = () => {
+const getRound = () => {
   const firstProgrNumber = getRandomNumber();
   const progressionLength = getRandomNumber(5, 10);
   const progressionStep = getRandomNumber(1, 100);
@@ -27,8 +27,8 @@ const gamesRule = () => {
   return [questionProgression, expectedAnswer];
 };
 
-const progressionGame = () => {
-  logic(question, gamesRule);
+const runProgressionGame = () => {
+  run(description, getRound);
 };
 
-export default progressionGame;
+export default runProgressionGame;

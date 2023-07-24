@@ -1,18 +1,18 @@
 import getRandomNumber from '../utilities.js';
-import logic from '../index.js';
+import run from '../index.js';
 
-const question = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEvenNumber = (num) => num % 2 === 0;
 
-const gamesRule = () => {
-  const number = getRandomNumber();
-  const expectedAnswer = isEvenNumber(number) ? 'yes' : 'no';
-  return [number, expectedAnswer];
+const getRound = () => {
+  const questionNumber = getRandomNumber();
+  const expectedAnswer = isEvenNumber(questionNumber) ? 'yes' : 'no';
+  return [questionNumber, expectedAnswer];
 };
 
-const evenGame = () => {
-  logic(question, gamesRule);
+const runEvenGame = () => {
+  run(description, getRound);
 };
 
-export default evenGame;
+export default runEvenGame;

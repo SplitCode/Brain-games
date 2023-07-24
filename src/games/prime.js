@@ -1,7 +1,7 @@
 import getRandomNumber from '../utilities.js';
-import logic from '../index.js';
+import run from '../index.js';
 
-const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -15,14 +15,14 @@ const isPrime = (num) => {
   return true;
 };
 
-const gamesRule = () => {
-  const number = getRandomNumber();
-  const expectedAnswer = isPrime(number) ? 'yes' : 'no';
-  return [number, expectedAnswer];
+const getRound = () => {
+  const questionNumber = getRandomNumber();
+  const expectedAnswer = isPrime(questionNumber) ? 'yes' : 'no';
+  return [questionNumber, expectedAnswer];
 };
 
-const primeGame = () => {
-  logic(question, gamesRule);
+const runPrimeGame = () => {
+  run(description, getRound);
 };
 
-export default primeGame;
+export default runPrimeGame;
