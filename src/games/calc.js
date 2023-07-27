@@ -1,30 +1,31 @@
-import getRandomNumber from '../utilities.js';
+import { getRandomNumber, getRandomIndex } from '../utilities.js';
 import run from '../index.js';
 
 const description = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
 
-const calculate = (num1, num2, operator) => {
+const calculate = (number1, number2, operator) => {
   switch (operator) {
     case '+':
-      return num1 + num2;
+      return number1 + number2;
     case '-':
-      return num1 - num2;
+      return number1 - number2;
     case '*':
-      return num1 * num2;
+      return number1 * number2;
     default:
       throw new Error(`Unknown operator ${operator}`);
   }
 };
 
 const getRound = () => {
-  const [number1, number2] = [getRandomNumber(), getRandomNumber()];
-  const operators = ['+', '-', '*'];
-  const getRandomIndex = getRandomNumber(0, 2);
-  const randomOperator = operators[getRandomIndex];
+  const number1 = getRandomNumber(0, 100);
+  const number2 = getRandomNumber(0, 100);
+  const index = getRandomIndex(operators);
+  const operator = operators[index];
+  const expectedAnswer = String(calculate(number1, number2, operator));
+  const question = `${number1} ${operator} ${number2}`;
 
-  const expectedAnswer = calculate(number1, number2, randomOperator).toString();
-  const questionExpression = `${number1} ${randomOperator} ${number2}`;
-  return [questionExpression, expectedAnswer];
+  return [question, expectedAnswer];
 };
 
 const runCalcGame = () => {

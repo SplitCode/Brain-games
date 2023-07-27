@@ -1,30 +1,28 @@
-import getRandomNumber from '../utilities.js';
+import { getRandomNumber, getRandomIndex } from '../utilities.js';
 import run from '../index.js';
 
 const description = 'What number is missing in the progression?';
 
+const getProgression = (start, step, length) => {
+  const progression = [];
+
+  for (let i = start; progression.length < length; i += step) {
+    progression.push(i);
+  }
+  return progression;
+};
+
 const getRound = () => {
-  const firstProgrNumber = getRandomNumber();
-  const progressionLength = getRandomNumber(5, 10);
-  const progressionStep = getRandomNumber(1, 100);
-  const getRandomIndex = getRandomNumber(0, progressionLength - 1);
+  const start = getRandomNumber(0, 100);
+  const step = getRandomNumber(1, 100);
+  const length = getRandomNumber(5, 10);
+  const progression = getProgression(start, step, length);
+  const hiddenIndex = getRandomIndex(progression);
+  const expectedAnswer = String(progression[hiddenIndex]);
+  progression[hiddenIndex] = '..';
+  const question = progression.join(' ');
 
-  const getRandomProgression = (firstNumber, step, length) => {
-    const randomProgression = [];
-    randomProgression[0] = firstNumber;
-    for (let i = 1; i < length; i += 1) {
-      randomProgression[i] = randomProgression[i - 1] + step;
-    }
-    return randomProgression;
-  };
-
-  const progression = getRandomProgression(firstProgrNumber, progressionStep, progressionLength);
-  const hiddenNumber = progression[getRandomIndex];
-  progression[getRandomIndex] = '..';
-  const expectedAnswer = String(hiddenNumber);
-  const questionProgression = progression.join(' ');
-
-  return [questionProgression, expectedAnswer];
+  return [question, expectedAnswer];
 };
 
 const runProgressionGame = () => {
